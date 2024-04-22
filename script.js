@@ -49,27 +49,4 @@ document.querySelectorAll(".projects").forEach((project) => {
   });
 
 
-
-
-  project.addEventListener("mousemove", (details) => {
-    var diffY = details.clientY - project.getBoundingClientRect().top;
-    var diffX = details.clientX - project.getBoundingClientRect().left;
-
-    diffrotation=details.clientX-rotation;
-    rotation=details.clientX;
-
-    var img = project.querySelector("img");
-    var imgWidth = img.offsetWidth;
-    var imgHeight = img.offsetHeight;
-
-    if (diffX >= 0 && diffX <= project.offsetWidth && diffY >= 0 && diffY <= project.offsetHeight) {
-      gsap.to(img, {
-        opacity: 1,
-        top: diffY - imgHeight / 2,
-        left: diffX - imgWidth / 2,
-        ease: Power3,
-        rotate:gsap.utils.clamp(-10,10,diffrotation)
-      });
-    }
-  }); 
 })
