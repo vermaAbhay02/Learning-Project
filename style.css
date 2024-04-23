@@ -21,6 +21,7 @@ body {
 
     #heading h1 {
         font-size: 10vw;
+        margin-left: 2%;
     }
 
     #socials a {
@@ -47,6 +48,7 @@ body {
 
     #heading h1 {
         font-size: 12vw;
+        margin-left: 2%;
     }
 
     #socials ul {
@@ -220,7 +222,7 @@ body {
 
 .detailed-info {
 
-    width: 40%;
+    width: 55%;
     text-align: justify;
     font-size: 2.8vmin;
     margin-right: 2%;
@@ -236,7 +238,7 @@ body {
     justify-content: space-evenly;
     padding: 1% 0%;
     flex-direction: column;
-    margin-top: 1%;
+    /* margin-top: 1%; */
 }
 
 footer section {
