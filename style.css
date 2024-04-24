@@ -150,7 +150,7 @@ body {
 }
 
 .project-container {
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -172,6 +172,24 @@ body {
     padding: 2%;
     font-size: 2.8vw;
 }
+.projects div{
+    width: 95%;
+    /* border: 2px solid white; */
+    display: flex;
+    align-items: first baseline;
+    gap: 1%;
+}
+.projects div a{
+    padding: .5%;
+    border-radius: 10px;
+    font-weight: 500;
+    color: black;
+    background: white;
+}
+
+
+
+
 
 .projects h2 {
     font-weight: 500;
@@ -228,6 +246,60 @@ body {
     margin-right: 2%;
 
 }
+
+
+#certificates{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: center;
+
+}
+#inner-cert{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.cert-head{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.cert-head h2{
+    font-size: 3.5vw;
+    border: 4px double greenyellow;
+    padding: 1.5%;
+    border-radius: 20px;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+.child{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    padding: 3%;
+    
+}
+.child > article{
+    width: 300px;
+    height: 270px;
+    background-color: rgba(159, 255, 6, 0.762);
+    border-radius: 15px;
+}
+.middle{
+
+    justify-content: center;
+}
+
+
+
+
+
 
 #footer-main {
     width: 100%;
