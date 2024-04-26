@@ -3,6 +3,23 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+
+window.onload = function () {
+  setTimeout(() => {
+    // Gradually hide loading screen and show main content
+    document.querySelector('.loading-container').style.display = 'none';
+    document.getElementById('#main').style.display = 'block';
+  }, 3000); // Add a small delay to improve transition smoothness
+};
+
+
+
+
+
+setTimeout(() => {
+  
+
+
 function mousefollower(){
   window.addEventListener('mousemove',(dets)=>{
     document.querySelector("#mouse-circle").style.transform=`translate(${dets.clientX}px,${dets.clientY}px)`
@@ -50,3 +67,4 @@ document.querySelectorAll(".projects").forEach((project) => {
 
 
 })
+}, 3100); // Add a small delay to improve transition smoothness
