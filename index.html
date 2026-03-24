@@ -1,502 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="loco.css">
-    <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <style>
-        #mouse-circle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: white;
-            z-index: 99999;
-            border-radius: 50%;
-            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-        }
-
-        /* Main-Container */
-        #main {
-            width: 100%;
-            background-color: black;
-            display: flex;
-            flex-direction: column;
-            gap: 100px;
-        }
-
-        .bound {
-            width: fit-content;
-            padding-right: 1%;
-            /* background-color: brown; */
-            overflow: hidden;
-
-        }
-
-        .bound .bound-elem {
-            transform: translateY(100%);
-        }
-
-        .bound-image {
-            width: fit-content;
-            overflow: hidden;
-            margin-top: -3%;
-
-
-        }
-
-        .bound-image .bound-img {
-            transform: translateY(110%);
-        }
-
-
-        /* Landing-Page */
-        #landing-page {
-            width: 100%;
-            color: white;
-        }
-
-
-        /* Nav-bar */
-
-        #nav {
-            width: 100%;
-            padding: 20px 2%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* background-color:rgb(10, 94, 66); */
-        }
-
-        #nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-        }
-
-        #nav .links {
-            display: none;
-            list-style: none;
-        }
-
-        #nav h4:hover {
-            cursor: pointer;
-        }
-
-        .whenClick {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-
-
-
-
-        /* Heading */
-
-        #heading {
-            margin-top: 2%;
-            text-transform: uppercase;
-
-            /* background-color: blue; */
-        }
-
-        #heading h1 {
-            font-size: 8.5vw;
-            line-height: 1;
-            margin-left: 2%;
-            opacity: 0.7;
-        }
-
-        #heading h1:hover {
-            /* cursor: pointer; */
-            opacity: 1;
-        }
-
-        .second-heading {
-            margin-left: 13%;
-            width: fit-content;
-        }
-
-
-        /* Socials */
-
-        #socials {
-            margin-top: 2%;
-            /* background-color: tomato; */
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 1% 5% 0;
-        }
-
-        #socials a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            opacity: 0.7;
-        }
-
-
-        #socials a:hover {
-            opacity: 1;
-            font-size: 30px;
-            transition: all 0.5s ease-in-out;
-        }
-
-        #socials i {
-            font-size: 35px;
-            margin: 2.5%;
-        }
-
-        #socials-ul {
-            width: 40%;
-            padding: 3%;
-            display: flex;
-            flex-direction: column;
-            row-gap: 10px;
-            list-style: none;
-            /* background-color: rgba(64, 224, 208, 0.651); */
-        }
-
-        #profile-image {
-            width: 52vmin;
-            height: 50vmin;
-            border-radius: 20px;
-            margin-right: 3%;
-
-        }
-
-        svg {
-            width: 30px;
-            height: 50%;
-
-        }
-    </style>
-
+    <title>Abhay Verma | Associate Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div id="mouse-circle"></div>
+    <!-- Noise overlay -->
+    <div class="noise"></div>
 
-    <div class="loading-container">
-        <div class="loading-line">
-            <div class="loading-bar"></div>
-        </div>
-    </div>
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-    <section id="main">
+    <header class="navbar">
+        <div class="logo">AV<span class="logo-dot">.</span></div>
+        <nav>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certs</a>
+            <a href="#skills">Skills</a>
+        </nav>
+        <a href="resume/AbhayVerma_Feb_2026.pdf" target="_blank" class="nav-cta">Resume ↗</a>
+    </header>
 
-        <section id="landing-page">
-            <article id="nav">
-                <a href="#">Abhay Verma</a>
+    <section class="hero">
+        <div class="hero-bg-grid"></div>
 
-                <ul class="links">
-                    <li class="navs">Home</li>
-                    <li class="navs">Projects</li>
-                    <li class="navs">Contact</li>
-                </ul>
-                <h4>Menu+</h4>
-            </article>
-
-
-            <article id="heading">
-                <div class="bound">
-                    <h1 class="bound-elem">FullStack</h1>
+        <div class="hero-inner">
+            <!-- LEFT: Text content -->
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="status-dot"></span>
+                    Available for opportunities
                 </div>
 
-                <div class="second-heading bound">
-                    <h1 class="bound-elem">Developer</h1>
+                <h1>
+                    <span class="h1-line">Backend &</span>
+                    <span class="h1-line accent-line">Cloud</span>
+                    <span class="h1-line">Engineer</span>
+                </h1>
+
+                <p class="hero-desc">
+                    Building scalable enterprise applications at <strong>Tech Mahindra</strong>.<br>
+                    ASP.NET Core · AWS · Azure · REST APIs
+                </p>
+
+                <div class="hero-social">
+                    <a href="https://linkedin.com/in/abhayverma1" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.2h.1c.65-1.23 2.25-2.53 4.63-2.53 4.95 0 5.87 3.25 5.87 7.47V24h-5v-7.7c0-1.83-.03-4.2-2.56-4.2-2.57 0-2.97 2-2.97 4.06V24h-5V8z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/vermaAbhay02" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.14c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.95.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.07 0 0 .96-.31 3.15 1.18a10.96 10.96 0 012.87-.39c.97 0 1.94.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.63 1.6.24 2.78.12 3.07.74.81 1.18 1.84 1.18 3.1 0 4.45-2.7 5.43-5.27 5.71.41.35.77 1.04.77 2.1v3.11c0 .31.2.66.79.55C20.21 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:abhayverma.dev@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 13.065L.015 4.5A2 2 0 012 3h20a2 2 0 011.985 1.5L12 13.065zM12 15L0 6.435V19a2 2 0 002 2h20a2 2 0 002-2V6.435L12 15z"/></svg>
+                        <span>Email</span>
+                    </a>
                 </div>
-            </article>
-
-            <article id="socials">
-                <ul id="socials-ul">
-                    <li><a href="https://github.com/vermaAbhay02" target="_blank"><i
-                                class="fa-brands fa-github"></i>Github</a></li>
-                    <li><a href="https://linkedin.com/in/abhayverma1" target="_blank"><i
-                                class="fa-brands fa-linkedin"></i>Linkedin</a></li>
-                    <li><a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i>Twitter</a></li>
-                </ul>
-                <div class="bound-image">
-                    <img src="me.webp" loading="lazy" id="profile-image" class="bound-img">
-                </div>
-            </article>
-        </section>
-
-        <section id="about-section">
-
-            <article id="about">
-                <div class="about-head">
-                    <h1>About Me</h1>
-                </div>
-                <div class="detailed-info">
-                    <p>
-                        Hi there! My name is Abhay. I'm a masters student in LPU This portfolio shows one year of my
-                        coding journey. I enjoy solving problems ,building creative web applications,playing music in my
-                        free
-                        time. I have a good knowledge of HTML, CSS, JS, Node, PHP, Python, Java, and C++.
-
-                    </p>
-                </div>
-
-            </article>
-
-
-        </section>
-
-        <section id="skill-section">
-            <div id="skill-heading">
-                <h1>Skills</h1>
             </div>
-            <article id="skill-container">
-                <article class="skills">
-                    <i class="fa-brands fa-html5" style="color:  rgb(2, 138, 31);"></i>
-                    <h3>HTML</h3>
-                </article>
-                <article class="skills">
-                    <i class="fa-brands fa-css3-alt" style="color:  rgb(2, 138, 31);"></i>
-                    <h3>CSS</h3>
-                </article>
-                <article class="skills">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="288" height="288">
-                        <path
-                            d="M18.5 9.51a4.22 4.22 0 0 1-1.91-1.34A5.77 5.77 0 0 0 12 6a4.72 4.72 0 0 0-5 4 3.23 3.23 0 0 1 3.5-1.49 4.32 4.32 0 0 1 1.91 1.35A5.77 5.77 0 0 0 17 12a4.72 4.72 0 0 0 5-4 3.2 3.2 0 0 1-3.5 1.51zm-13 4.98a4.22 4.22 0 0 1 1.91 1.34A5.77 5.77 0 0 0 12 18a4.72 4.72 0 0 0 5-4 3.23 3.23 0 0 1-3.5 1.49 4.32 4.32 0 0 1-1.91-1.35A5.8 5.8 0 0 0 7 12a4.72 4.72 0 0 0-5 4 3.2 3.2 0 0 1 3.5-1.51z"
-                            fill="#3b5441" class="color000 svgShape"></path>
-                    </svg>
+            <!-- RIGHT: Profile photo -->
+            <div class="hero-photo-wrap">
+                <div class="hero-photo-ring"></div>
+                <div class="hero-photo-ring hero-photo-ring--2"></div>
+                <div class="hero-photo-container">
+                    <img src="ME.jpg" alt="Abhay Verma" class="hero-photo">
+                </div>
+                <div class="hero-photo-badge">
+                    <span>3×</span> AWS Certified
+                </div>
+            </div>
+        </div>
 
-                    <h3>Tailwind</h3>
-                </article>
-
-                <article class="skills">
-                    <i class="fa-brands fa-js" style="color:  rgb(2, 138, 31);"></i>
-                    <h3>JS</h3>
-                </article>
-                <article class="skills">
-                    <i class="fa-brands fa-node" style="color:  rgb(2, 138, 31);"></i>
-                    <h3>Node</h3>
-                </article>
-                <article class="skills">
-
-
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0 0 80 80">
-                        <path fill="#b0c1d4"
-                            d="M74.01,62.5c-1.795,0-3.517-0.852-4.607-2.277L57.807,45.06L46.211,60.223 c-1.09,1.426-2.812,2.277-4.607,2.277h-3.428L54.66,40.944L38.261,19.5h3.428c1.795,0,3.518,0.851,4.607,2.276l11.51,15.052 l11.51-15.052c1.09-1.426,2.812-2.276,4.607-2.276h3.428L60.954,40.944L77.438,62.5H74.01z">
-                        </path>
-                        <path fill="#66798f"
-                            d="M76.341,20L60.324,40.944L76.426,62H74.01c-1.651,0-3.207-0.769-4.21-2.081L57.807,44.237 L45.814,59.919C44.811,61.231,43.254,62,41.604,62h-2.417l16.102-21.056L39.273,20h2.417c1.651,0,3.207,0.769,4.21,2.081 l11.907,15.571l11.907-15.571C70.717,20.769,72.273,20,73.924,20H76.341 M78.364,19h-2.024h-2.417c-1.949,0-3.82,0.925-5.005,2.473 L57.807,36.005L46.694,21.473C45.51,19.925,43.639,19,41.689,19h-2.417h-2.024l1.229,1.607L54.03,40.944L38.393,61.393L37.163,63 h2.024h2.417c1.949,0,3.82-0.925,5.005-2.473l11.198-14.644l11.198,14.644C70.189,62.075,72.06,63,74.01,63h2.417h2.024 l-1.229-1.607L61.583,40.944l15.552-20.337L78.364,19L78.364,19z">
-                        </path>
-                        <g>
-                            <path fill="#b0c1d4"
-                                d="M20,64.5c-10.201,0-18.5-8.594-18.5-19.156v-8.689C1.5,26.093,9.799,17.5,20,17.5 s18.5,8.593,18.5,19.154v7.845L6.5,44.5v0.844C6.5,53.15,12.556,59.5,20,59.5c4.111,0,8.093-2.067,10.653-5.529 c1.161-1.571,2.86-2.472,4.661-2.472h1.711l0.204,0.204l0.134,0.268l-0.075,0.203C34.571,59.547,27.624,64.5,20,64.5z M33.5,39.5 v-2.846C33.5,28.85,27.444,22.5,20,22.5S6.5,28.85,6.5,36.655V39.5H33.5z">
-                            </path>
-                            <path fill="#66798f"
-                                d="M20,18c9.925,0,18,8.369,18,18.654v7.345L6,44v1.344C6,53.426,12.28,60,20,60 c4.376,0,8.446-2.203,11.055-5.732c1.016-1.374,2.55-2.269,4.259-2.269l1.505,0C36.819,52,36.819,52,36.819,52.001 C34.175,59.176,27.411,64,20,64c-9.925,0-18-8.369-18-18.656v-8.689C2,26.369,10.075,18,20,18 M6,40h28v-3.346 C34,28.574,27.72,22,20,22S6,28.574,6,36.654V40 M20,17C9.523,17,1,25.817,1,36.654v8.689C1,56.182,9.523,65,20,65 c7.832,0,14.968-5.085,17.758-12.653l0.496-1.346l-1.435-0.002l-1.505,0c-1.961,0-3.806,0.975-5.063,2.675 C27.785,57.009,23.953,59,20,59c-7.168,0-13-6.126-13-13.656V45l31-0.001l1,0v-1v-7.345C39,25.817,30.477,17,20,17L20,17z M7,39 v-2.346C7,29.125,12.832,23,20,23s13,6.125,13,13.654V39H7L7,39z">
-                            </path>
-                        </g>
-                    </svg>
-
-
-
-                    <h3>Express</h3>
-                </article>
-                <article class="skills">
-                    <i class="fa-brands fa-react" style="color:  rgb(2, 138, 31);"></i>
-                    <h3>React</h3>
-                </article>
-                <article class="skills">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="mongodb">
-                        <path fill="#FFF"
-                            d="m12.546 24-.639-.218s.078-3.257-1.091-3.491c-.779-.904.125-38.338 2.93-.125 0 0-.966.483-1.138 1.309-.186.811-.062 2.525-.062 2.525z">
-                        </path>
-                        <path fill="#A6A385"
-                            d="m12.546 24-.639-.218s.078-3.257-1.091-3.491c-.779-.904.125-38.338 2.93-.125 0 0-.966.483-1.138 1.309-.186.811-.062 2.525-.062 2.525z">
-                        </path>
-                        <path fill="#FFF"
-                            d="M12.889 20.852s5.595-3.678 4.286-11.33c-1.262-5.563-4.239-7.387-4.566-8.088-.358-.499-.701-1.371-.701-1.371l.234 15.475c-.001.015-.484 4.737.747 5.314z">
-                        </path>
-                        <path fill="#499D4A"
-                            d="M12.889 20.852s5.595-3.678 4.286-11.33c-1.262-5.563-4.239-7.387-4.566-8.088-.358-.499-.701-1.371-.701-1.371l.234 15.475c-.001.015-.484 4.737.747 5.314z">
-                        </path>
-                        <path fill="#FFF"
-                            d="M11.58 21.054s-5.252-3.584-4.94-9.896c.296-6.312 4.005-9.413 4.722-9.974.468-.498.483-.685.514-1.184.327.701.265 10.488.312 11.641.14 4.442-.249 8.572-.608 9.413z">
-                        </path>
-                        <path fill="#58AA50"
-                            d="M11.58 21.054s-5.252-3.584-4.94-9.896c.296-6.312 4.005-9.413 4.722-9.974.468-.498.483-.685.514-1.184.327.701.265 10.488.312 11.641.14 4.442-.249 8.572-.608 9.413z">
-                        </path>
-                    </svg>
-                    <h3>MongoDb</h3>
-                </article>
-
-                <article class="skills">
-                    <i class="fa-brands fa-php" style="color: rgb(2, 138, 31);"></i>
-                    <h3>PHP</h3>
-                </article>
-                <article class="skills">
-                    <i class="fa-brands fa-python" style="color: rgb(2, 138, 31);"></i>
-                    <h3>Python</h3>
-                </article>
-                <article class="skills">
-                    <i class="fa-brands fa-java" style="color: rgb(2, 138, 31);"></i>
-                    <h3>Java</h3>
-                </article>
-                <article class="skills">
-                    <img src="cpp.png" alt="">
-                    <h3>CPP</h3>
-                </article>
-
-
-            </article>
-        </section>
-
-        <section class="project-section">
-
-            <h1>Projects</h1>
-
-            <article class="project-container">
-                <article class="projects">
-
-                    <div>
-                        <h2>Mental Health Chatbot</h2>
-                        <a href="https://github.com/vermaAbhay02/Build-A-Thon-Project" target="_blank">
-                            <i class="fa-brands fa-github"></i> See
-                        </a>
-                    </div>
-
-
-                    <p>2024</p>
-                </article>
-
-                <article class="projects">
-
-                    <div>
-                        <h2>Employee Presence Tracking System</h2>
-                        <a href="https://github.com/vermaAbhay02/avay2" target="_blank">
-                            <i class="fa-brands fa-github"></i> See
-                        </a>
-                    </div>
-
-                    <p>2024</p>
-
-                </article>
-
-                <article class="projects">
-                    <div>
-                        <h2>Gamma-Hadron Classification</h2>
-                        <a href="https://github.com/vermaAbhay02/Gamma-Hadron-classification" target="_blank">
-                            <i class="fa-brands fa-github"></i> See
-                        </a>
-                    </div>
-
-
-
-                    <p>2023</p>
-                </article>
-
-                <article class="projects ">
-                    <div>
-                        <h2>Wedding Planner Application</h2>
-                        <a href="https://github.com/vermaAbhay02/Wedding-Planner-Application" target="_blank">
-                            <i class="fa-brands fa-github"></i> See
-                        </a>
-                    </div>
-
-                    <p>2023</p>
-                </article>
-
-                <article class="projects project-last">
-                    <div>
-                        <h2>E-commerce</h2>
-                        <a href="https://vermaabhay02.github.io/E-commerce/" target="_blank">
-                            See Preview
-                        </a>
-                    </div>
-
-
-                    <p>2023</p>
-                </article>
-
-
-
-
-            </article>
-        </section>
-
-        <section id="certificates">
-
-            <section id="inner-cert">
-
-                <article class="cert-head">
-                    <h2>Certificates</h2>
-                </article>
-
-                <article class="child middle">
-                    <article class="certificate">
-                        <img class="cert-img" src="Certificate/javaCipher.jpeg" alt="Training in Java ">
-                    </article>
-                </article>
-                <article class="child">
-                    <article class="certificate">
-                        <img class="cert-img" src="Certificate/JsCertificate.jpeg" alt="JS for Web Development">
-                    </article>
-                    <article class="certificate">
-                        <img class="cert-img" src="Certificate/hackathon.png" alt="Build-A-Thon-Project">
-                    </article>
-                </article>
-                <article class="child middle">
-                    <article class="certificate"></article>
-                </article>
-            </section>
-
-
-
-
-        </section>
-
-        <footer id="footer-main">
-            <section>
-                <article class="footer-article">
-                    <h1>Abhay Verma</h1>
-                </article>
-                <article class="footer-article contact">
-                    <p> Email: <a href="mailto:abhayverma.dev@gmail.com">www.abhayverma.dev@gmail.com</a>
-                    </p>
-                    <p>
-                        Mobile: <a href="#"> (+91)8580714580</a>
-                    </p>
-                </article>
-                <article class="footer-article">
-                    <ul id="footer-links">
-                        <li><a href="https://github.com/vermaAbhay02" target="_blank><i class="fa-brands fa-github"></i>Github</a></li>
-                        <li><a href="https://linkedin.com/in/abhayverma1" target="_blank><i class="fa-brands fa-linkedin"></i>Linkedin</a></li>
-                    </ul>
-                </article>
-            </section>
-            <section class="copyright">
-                <p>© 2023 Abhay Verma</p>
-            </section>
-        </footer>
-
-
+        <div class="hero-scroll">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-    <script src="script.js"></script>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+        <div class="section-label">01 — Experience</div>
+        <h2 class="section-title">Where I've <em>worked</em></h2>
+
+        <div class="timeline">
+            <div class="timeline-item hidden">
+                <div class="tl-left">
+                    <span class="tl-date">Sep 2024 – Present</span>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-tag">Full-time</div>
+                    <h3>Associate Software Engineer</h3>
+                    <h4>Tech Mahindra</h4>
+                    <p>Trained extensively in ASP.NET Core full-stack development — building REST APIs, working with Entity Framework, Web API, SQL Server, and MVC architecture. Independently earned 3 AWS certifications and Microsoft Azure Data Fundamentals, demonstrating a strong cloud-first mindset. Went beyond the role by self-upskilling in React, Redux, Micro-frontends, Microservices, and backend authentication — actively building the skillset to architect and ship scalable, production-grade systems.</p>
+                    <div class="tl-pills">
+                        <span>ASP.NET Core</span><span>REST APIs</span><span>SQL Server</span><span>AWS</span><span>Azure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+        <div class="section-label">02 — Education</div>
+        <h2 class="section-title">Academic <em>background</em></h2>
+
+        <div class="timeline">
+            <div class="timeline-item hidden">
+                <div class="tl-left">
+                    <span class="tl-date">2022 – 2024</span>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-tag gpa-tag">CGPA 8.91</div>
+                    <h3>Master's Degree</h3>
+                    <h4>Computer Science / Software Engineering</h4>
+                    <p>Advanced graduate studies in software engineering, distributed systems, and cloud architecture.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item hidden">
+                <div class="tl-left">
+                    <span class="tl-date">2019 – 2022</span>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-tag gpa-tag">CGPA 9.17</div>
+                    <h3>Bachelor of Science</h3>
+                    <h4>Physics Major</h4>
+                    <p>Strong foundation in analytical thinking, mathematics, and problem-solving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <div class="section-label">03 — Projects</div>
+        <h2 class="section-title">Things I've <em>built</em></h2>
+
+        <div class="projects-grid">
+            <div class="project-card project-card--large">
+                <div class="project-num">01</div>
+                <div class="project-body">
+                    <div class="project-stack">
+                        <span>React</span><span>Firebase</span>
+                    </div>
+                    <h3>Easy Clipboard</h3>
+                    <p>Copy text on one device, paste it on another — real-time cross-device clipboard syncing.</p>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.github.com/vermaAbhay02/copy-paste-across-devices.git" class="proj-link">GitHub ↗</a>
+                    <a href="https://karcopy.netlify.app/" target="_blank" class="proj-link proj-live">Live ↗</a>
+                </div>
+                
+            </div>
+
+            <div class="project-card">
+                <div class="project-num">02</div>
+                <div class="project-body">
+                    <div class="project-stack">
+                        <span>ASP.NET Core MVC</span><span>SQL Server</span><span>Authentication</span>
+                    </div>
+                    <h3>MovieHub</h3>
+                    <p>Full-stack movie catalog platform with user authentication, reviews, and a rich SQL-backed data layer.</p>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="proj-link">GitHub ↗</a>
+                </div>
+                
+            </div>
+
+            <div class="project-card">
+                <div class="project-num">03</div>
+                <div class="project-body">
+                    <div class="project-stack">
+                        <span>React</span><span>Firebase</span><span>Real-time</span>
+                    </div>
+                    <h3>Anonymous Chat</h3>
+                    <p>Privacy-first real-time chat application with anonymous sessions and Firebase-powered messaging.</p>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="proj-link">GitHub ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+        <div class="section-label">04 — Certifications</div>
+        <h2 class="section-title">Credentials & <em>badges</em></h2>
+
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-badge-wrap">
+                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/450x520_lower.f469f7e0f489543ad4619c662754dd7619077991.png" alt="AWS Cloud Practitioner" class="cert-badge">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <h3>AWS Certified Cloud Practitioner</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: 464985e098fd450bb7431b286cce5867</span>
+                        <span class="cert-valid">Valid through June 2028</span>
+                    </div>
+                    <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
+                </div>
+                <span class="cert-status">Active</span>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-badge-wrap">
+                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/1268_AWS_Cert_Template_badges_AI-Practitioner.3f7a936cef63769690a27beb1d27e2472c29adb2.png" alt="AWS AI Practitioner" class="cert-badge">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <h3>AWS Certified AI Practitioner</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: 5a58d2770ad1466a8da2cb30cc4b16f5</span>
+                        <span class="cert-valid">Valid through Nov 2028</span>
+                    </div>
+                    <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
+                </div>
+                <span class="cert-status">Active</span>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-badge-wrap">
+                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/1268_AWS_Cert_Template_badges_Machine-Learning-Engineer-Associate.43c42959403a73b47e9a85854b4030bd29fbedf9.png" alt="AWS ML Engineer" class="cert-badge">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <h3>AWS Certified ML Engineer – Associate</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: c26e4088b4454ee7b98e6bedd77abeff</span>
+                        <span class="cert-valid">Valid through Oct 2028</span>
+                    </div>
+                    <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
+                </div>
+                <span class="cert-status">Active</span>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-badge-wrap">
+                    <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="Azure Data Fundamentals" class="cert-badge">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-issuer">Microsoft</span>
+                    <h3>Azure Data Fundamentals</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: 5VA6A3-D312C7</span>
+                        <span class="cert-valid">Earned on Nov 2025</span>
+                    </div>
+                    <a href="#" target="_blank" class="cert-verify">Verify ↗</a>
+                </div>
+                <span class="cert-status">Active</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <div class="section-label">05 — Skills</div>
+        <h2 class="section-title">My <em>toolkit</em></h2>
+
+        <div class="skills-container">
+            <div class="skill-group">
+                <span class="skill-group-label">Languages</span>
+                <div class="skill-chips">
+                    <div class="chip chip--cloud">C++</div>
+                    <div class="chip chip--cloud">C#</div>
+                    <div class="chip chip--cloud">Java</div>
+                    <div class="chip chip--cloud">Python</div>
+                    <div class="chip chip--cloud">Javascript</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <span class="skill-group-label">Backend</span>
+                <div class="skill-chips">
+                    <div class="chip chip--cloud">ASP.NET Core</div>
+                    <div class="chip chip--cloud">Entity Framework</div>
+                    <div class="chip chip--cloud">REST APIs</div>
+                    <div class="chip chip--cloud">Node.js</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <span class="skill-group-label">Data</span>
+                <div class="skill-chips">
+                    <div class="chip chip--cloud">SQL Server</div>
+                    <div class="chip chip--cloud">MYSQL</div>
+                    <div class="chip chip--cloud">MongoDb</div>
 
 
+                </div>
+            </div>
+            <div class="skill-group">
+                <span class="skill-group-label">Cloud</span>
+                <div class="skill-chips">
+                    <div class="chip chip--cloud">AWS</div>
+                    <div class="chip chip--cloud">Azure</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <span class="skill-group-label">Frontend</span>
+                <div class="skill-chips">
+                    <div class="chip chip--cloud">React</div>
+                    <div class="chip chip--cloud">Angular</div>
+                    <div class="chip chip--cloud">Typescript</div>
+                    <div class="chip chip--cloud">Redux</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="logo">AV<span class="logo-dot">.</span></span>
+                <p>Building things that scale.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://linkedin.com/in/abhayverma1" target="_blank">LinkedIn</a>
+                <a href="https://github.com/vermaAbhay02" target="_blank">GitHub</a>
+                <a href="mailto:abhayverma.dev@gmail.com">Email</a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2026 Abhay Verma — All rights reserved</div>
+    </footer>
 
+    <script>
+        // Cursor glow
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // Scroll animation — ONLY the IntersectionObserver logic (user's original JS preserved)
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+        // Navbar scroll state
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
 </body>
-
 </html>
