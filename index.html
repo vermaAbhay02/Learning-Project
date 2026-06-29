@@ -3,108 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhay Verma | Associate Software Engineer</title>
+    <title>Abhay Verma — Full Stack .NET Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Noise overlay -->
-    <div class="noise"></div>
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
 
-    <!-- Cursor glow -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <header class="navbar">
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
         <div class="logo">AV<span class="logo-dot">.</span></div>
-        <nav>
+        <nav class="nav-links">
             <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
             <a href="#projects">Projects</a>
-            <a href="#certifications">Certs</a>
+            <a href="#certifications">Certifications</a>
             <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
         </nav>
-        <a href="resume/AbhayVerma_Feb_2026.pdf" target="_blank" class="nav-cta">Resume ↗</a>
+        <a href="resume/Abhay_Verma_Resume_July_2026.pdf" target="_blank" class="nav-cta">
+            <span>Resume</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <span></span><span></span>
+        </button>
     </header>
 
-    <section class="hero">
-        <div class="hero-bg-grid"></div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#experience" class="mobile-link">Experience</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#certifications" class="mobile-link">Certifications</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#education" class="mobile-link">Education</a>
+        <a href="resume/Abhay_Verma_Resume_July_2026.pdf" target="_blank" class="mobile-link mobile-resume">Resume ↗</a>
+    </div>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-grid-bg"></div>
         <div class="hero-inner">
-            <!-- LEFT: Text content -->
-            <div class="hero-content">
-                <div class="hero-eyebrow">
-                    <span class="status-dot"></span>
-                    Available for opportunities
+            <div class="hero-left">
+                <div class="hero-status">
+                    <span class="status-pulse"></span>
+                    Open to opportunities
                 </div>
 
-                <h1>
-                    <span class="h1-line">Backend &</span>
-                    <span class="h1-line accent-line">Cloud</span>
-                    <span class="h1-line">Engineer</span>
-                </h1>
+                <div class="hero-headline">
+                    <div class="headline-row">
+                        <span class="hl-serif">Full Stack</span>
+                    </div>
+                    <div class="headline-row">
+                        <span class="hl-mono">.NET</span>
+                        <span class="hl-serif hl-italic"> Developer</span>
+                    </div>
+                </div>
 
-                <p class="hero-desc">
-                    Building scalable enterprise applications at <strong>Tech Mahindra</strong>.<br>
-                    ASP.NET Core · AWS · Azure · REST APIs
+                <p class="hero-summary">
+                    Building scalable enterprise applications at <strong>Tech Mahindra</strong>. 
+                    ASP.NET Core · JWT Auth · React · AWS · Azure.
                 </p>
 
-                <div class="hero-social">
-                    <a href="https://linkedin.com/in/abhayverma1" target="_blank" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.2h.1c.65-1.23 2.25-2.53 4.63-2.53 4.95 0 5.87 3.25 5.87 7.47V24h-5v-7.7c0-1.83-.03-4.2-2.56-4.2-2.57 0-2.97 2-2.97 4.06V24h-5V8z"/></svg>
-                        <span>LinkedIn</span>
+                <div class="hero-ctas">
+                    <a href="mailto:abhayverma.dev@gmail.com" class="btn-primary">
+                        Get in touch
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
-                    <a href="https://github.com/vermaAbhay02" target="_blank" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.14c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.95.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.07 0 0 .96-.31 3.15 1.18a10.96 10.96 0 012.87-.39c.97 0 1.94.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.63 1.6.24 2.78.12 3.07.74.81 1.18 1.84 1.18 3.1 0 4.45-2.7 5.43-5.27 5.71.41.35.77 1.04.77 2.1v3.11c0 .31.2.66.79.55C20.21 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="mailto:abhayverma.dev@gmail.com" aria-label="Email">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 13.065L.015 4.5A2 2 0 012 3h20a2 2 0 011.985 1.5L12 13.065zM12 15L0 6.435V19a2 2 0 002 2h20a2 2 0 002-2V6.435L12 15z"/></svg>
-                        <span>Email</span>
-                    </a>
+                    <div class="hero-socials">
+                        <a href="https://linkedin.com/in/abhayverma1" target="_blank" aria-label="LinkedIn" class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.2h.1c.65-1.23 2.25-2.53 4.63-2.53 4.95 0 5.87 3.25 5.87 7.47V24h-5v-7.7c0-1.83-.03-4.2-2.56-4.2-2.57 0-2.97 2-2.97 4.06V24h-5V8z"/></svg>
+                        </a>
+                        <a href="https://github.com/vermaAbhay02" target="_blank" aria-label="GitHub" class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.14c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.95.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.07 0 0 .96-.31 3.15 1.18a10.96 10.96 0 012.87-.39c.97 0 1.94.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.63 1.6.24 2.78.12 3.07.74.81 1.18 1.84 1.18 3.1 0 4.45-2.7 5.43-5.27 5.71.41.35.77 1.04.77 2.1v3.11c0 .31.2.66.79.55C20.21 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- RIGHT: Profile photo -->
-            <div class="hero-photo-wrap">
-                <div class="hero-photo-ring"></div>
-                <div class="hero-photo-ring hero-photo-ring--2"></div>
-                <div class="hero-photo-container">
-                    <img src="ME.jpg" alt="Abhay Verma" class="hero-photo">
+            <div class="hero-right">
+                <div class="hero-photo-wrap">
+                    <div class="photo-accent-ring"></div>
+                    <div class="photo-container">
+                        <img src="ME.jpg" alt="Abhay Verma" class="hero-photo">
+                    </div>
+                    <div class="photo-badge">
+                        <span class="badge-num">4×</span> Certified
+                    </div>
                 </div>
-                <div class="hero-photo-badge">
-                    <span>3×</span> AWS Certified
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">2+</span>
+                        <span class="stat-label">Years exp.</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">4</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">8.91</span>
+                        <span class="stat-label">MCA CGPA</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="hero-scroll">
+        <div class="hero-scroll-hint">
             <span>scroll</span>
-            <div class="scroll-line"></div>
+            <div class="scroll-track"><div class="scroll-thumb"></div></div>
         </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
-        <div class="section-label">01 — Experience</div>
-        <h2 class="section-title">Where I've <em>worked</em></h2>
+        <div class="section-header">
+            <span class="section-label">Experience</span>
+            <h2 class="section-title">Where I've <em>worked</em></h2>
+        </div>
 
         <div class="timeline">
-            <div class="timeline-item hidden">
-                <div class="tl-left">
-                    <span class="tl-date">Sep 2024 – Present</span>
-                    <div class="tl-line"></div>
+            <div class="tl-item reveal">
+                <div class="tl-meta">
+                    <span class="tl-date">Sep 2024 — Present</span>
+                    <span class="tl-type">Full-time</span>
+                </div>
+                <div class="tl-connector">
+                    <div class="tl-dot"></div>
+                    <div class="tl-track"></div>
                 </div>
                 <div class="tl-card">
-                    <div class="tl-tag">Full-time</div>
-                    <h3>Associate Software Engineer</h3>
-                    <h4>Tech Mahindra</h4>
-                    <p>Trained extensively in ASP.NET Core full-stack development — building REST APIs, working with Entity Framework, Web API, SQL Server, and MVC architecture. Independently earned 3 AWS certifications and Microsoft Azure Data Fundamentals, demonstrating a strong cloud-first mindset. Went beyond the role by self-upskilling in React, Redux, Micro-frontends, Microservices, and backend authentication — actively building the skillset to architect and ship scalable, production-grade systems.</p>
-                    <div class="tl-pills">
-                        <span>ASP.NET Core</span><span>REST APIs</span><span>SQL Server</span><span>AWS</span><span>Azure</span>
+                    <div class="tl-card-header">
+                        <div>
+                            <h3 class="tl-role">Associate Software Engineer</h3>
+                            <h4 class="tl-company">Tech Mahindra · Bengaluru, India</h4>
+                        </div>
+                        <div class="tl-pills">
+                            <span>ASP.NET Core</span>
+                            <span>REST APIs</span>
+                            <span>SQL Server</span>
+                            <span>JWT</span>
+                            <span>React</span>
+                        </div>
                     </div>
+                    <ul class="tl-bullets">
+                        <li>Developed and maintained full-stack web applications using ASP.NET Core Web API &amp; React, implementing RESTful endpoints, middleware pipelines, and dependency injection for modular, testable backend services.</li>
+                        <li>Designed and optimized SQL Server schemas and EF Core queries using LINQ; applied async/await patterns to improve API throughput and reduce latency.</li>
+                        <li>Implemented JWT-based authentication and role-based authorization on protected API endpoints, ensuring compliance with security standards.</li>
+                        <li>Participated in Agile sprints, code reviews, and cross-team integration of third-party services; contributed to defect resolution and minimized production downtime.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section-alt">
+        <div class="section-header">
+            <span class="section-label">Projects</span>
+            <h2 class="section-title">Things I've <em>built</em></h2>
+        </div>
+
+        <div class="projects-grid">
+            <!-- URL Shortener -->
+            <div class="proj-card proj-card--featured reveal">
+                <div class="proj-card-inner">
+                    <div class="proj-index">01</div>
+                    <div class="proj-content">
+                        <div class="proj-tags">
+                            <span>ASP.NET Core Web API</span>
+                            <span>EF Core</span>
+                            <span>SQLite</span>
+                            <span>JWT</span>
+                            <span>Background Services</span>
+                        </div>
+                        <h3 class="proj-title">URL Shortener </h3>
+                        <p class="proj-desc">Production-grade URL shortener backend with JWT authentication and refresh token rotation. Features a high-throughput click-tracking pipeline using <code>Channel&lt;T&gt;</code> and <code>BackgroundService</code> to dequeue and persist analytics asynchronously, decoupling the hot path from database writes. Admin analytics with aggregate click data, referrer tracking, and time-series breakdowns.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/vermaAbhay02" target="_blank" class="proj-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.14c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.95.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.07 0 0 .96-.31 3.15 1.18a10.96 10.96 0 012.87-.39c.97 0 1.94.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.63 1.6.24 2.78.12 3.07.74.81 1.18 1.84 1.18 3.1 0 4.45-2.7 5.43-5.27 5.71.41.35.77 1.04.77 2.1v3.11c0 .31.2.66.79.55C20.21 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DotShop -->
+            <div class="proj-card reveal">
+                <div class="proj-card-inner">
+                    <div class="proj-index">02</div>
+                    <div class="proj-content">
+                        <div class="proj-tags">
+                            <span>ASP.NET Core</span>
+                            <span>React</span>
+                            <span>Redux Toolkit</span>
+                            <span>SQL Server</span>
+                        </div>
+                        <h3 class="proj-title">DotShop</h3>
+                        <p class="proj-desc">Full-stack e-commerce platform with paginated product listings, basket management, and order processing via clean RESTful endpoints. RTK Query for server-state caching, cookie-based auth with role-based authorization.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/vermaAbhay02" target="_blank" class="proj-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.14c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.95.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.07 0 0 .96-.31 3.15 1.18a10.96 10.96 0 012.87-.39c.97 0 1.94.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.63 1.6.24 2.78.12 3.07.74.81 1.18 1.84 1.18 3.1 0 4.45-2.7 5.43-5.27 5.71.41.35.77 1.04.77 2.1v3.11c0 .31.2.66.79.55C20.21 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KarCopy -->
+            <div class="proj-card reveal">
+                <div class="proj-card-inner">
+                    <div class="proj-index">03</div>
+                    <div class="proj-content">
+                        <div class="proj-tags">
+                            <span>React</span>
+                            <span>Firebase</span>
+                            <span>Real-Time</span>
+                        </div>
+                        <h3 class="proj-title">KarCopy</h3>
+                        <p class="proj-desc">Real-time clipboard sharing app with room-based architecture and password protection. Firebase for live text sync across devices. Debounced listeners to reduce unnecessary network calls.</p>
+                        <div class="proj-links">
+                            <a href="https://www.github.com/vermaAbhay02/copy-paste-across-devices.git" target="_blank" class="proj-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.14c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.95.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.07 0 0 .96-.31 3.15 1.18a10.96 10.96 0 012.87-.39c.97 0 1.94.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.63 1.6.24 2.78.12 3.07.74.81 1.18 1.84 1.18 3.1 0 4.45-2.7 5.43-5.27 5.71.41.35.77 1.04.77 2.1v3.11c0 .31.2.66.79.55C20.21 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://karcopy.netlify.app/" target="_blank" class="proj-link proj-link--live">Live ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+        <div class="section-header">
+            <span class="section-label">Certifications</span>
+            <h2 class="section-title">Credentials &amp; <em>badges</em></h2>
+        </div>
+
+        <div class="cert-grid">
+            <div class="cert-card reveal">
+                <div class="cert-logo-wrap">
+                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/450x520_lower.f469f7e0f489543ad4619c662754dd7619077991.png" alt="AWS Cloud Practitioner">
+                </div>
+                <div class="cert-body">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <h3 class="cert-name">AWS Certified Cloud Practitioner</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: 464985e0…cce5867</span>
+                        <span class="cert-valid">Valid through Jun 2028</span>
+                    </div>
+                </div>
+                <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
+                <span class="cert-badge-active">Active</span>
+            </div>
+
+            <div class="cert-card reveal">
+                <div class="cert-logo-wrap">
+                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/1268_AWS_Cert_Template_badges_AI-Practitioner.3f7a936cef63769690a27beb1d27e2472c29adb2.png" alt="AWS AI Practitioner">
+                </div>
+                <div class="cert-body">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <h3 class="cert-name">AWS Certified AI Practitioner</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: 5a58d277…4b16f5</span>
+                        <span class="cert-valid">Valid through Nov 2028</span>
+                    </div>
+                </div>
+                <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
+                <span class="cert-badge-active">Active</span>
+            </div>
+
+            <div class="cert-card reveal">
+                <div class="cert-logo-wrap">
+                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/1268_AWS_Cert_Template_badges_Machine-Learning-Engineer-Associate.43c42959403a73b47e9a85854b4030bd29fbedf9.png" alt="AWS ML Engineer">
+                </div>
+                <div class="cert-body">
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <h3 class="cert-name">AWS Certified ML Engineer – Associate</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: c26e4088…7abeff</span>
+                        <span class="cert-valid">Valid through Oct 2028</span>
+                    </div>
+                </div>
+                <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
+                <span class="cert-badge-active">Active</span>
+            </div>
+            <div class="cert-card reveal">
+                <div class="cert-logo-wrap azure-wrap">
+                    <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="Azure Data Fundamentals">
+                </div>
+                <div class="cert-body">
+                    <span class="cert-issuer">Microsoft Azure</span>
+                    <h3 class="cert-name">Azure Data Fundamentals (DP-900)</h3>
+                    <div class="cert-meta">
+                        <span class="cert-id">ID: 5VA6A3-D312C7</span>
+                        <span class="cert-valid">Earned Nov 2025</span>
+                    </div>
+                </div>
+                <a href="#" target="_blank" class="cert-verify">Verify ↗</a>
+                <span class="cert-badge-active">Active</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section section-alt">
+        <div class="section-header">
+            <span class="section-label">Skills</span>
+            <h2 class="section-title">My <em>toolkit</em></h2>
+        </div>
+
+        <div class="skills-layout">
+            <div class="skill-row reveal">
+                <span class="skill-cat">Languages</span>
+                <div class="skill-chips">
+                    <span class="chip">C#</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">C++</span>
+                    <span class="chip">Java</span>
+                </div>
+            </div>
+            <div class="skill-row reveal">
+                <span class="skill-cat">Backend</span>
+                <div class="skill-chips">
+                    <span class="chip chip--accent">ASP.NET Core Web API</span>
+                    <span class="chip chip--accent">Entity Framework Core</span>
+                    <span class="chip chip--accent">JWT Auth</span>
+                    <span class="chip chip--accent">REST API Design</span>
+                    <span class="chip chip--accent">Background Services</span>
+                    <span class="chip chip--accent">Dependency Injection</span>
+                    <span class="chip chip--accent">Middleware</span>
+                    <span class="chip chip--accent">LINQ</span>
+                </div>
+            </div>
+            <div class="skill-row reveal">
+                <span class="skill-cat">Frontend</span>
+                <div class="skill-chips">
+                    <span class="chip">React.js</span>
+                    <span class="chip">Redux Toolkit</span>
+                    <span class="chip">RTK Query</span>
+                    <span class="chip">TypeScript</span>
+                    <span class="chip">Angular</span>
+                </div>
+            </div>
+            <div class="skill-row reveal">
+                <span class="skill-cat">Databases</span>
+                <div class="skill-chips">
+                    <span class="chip">MS SQL Server</span>
+                    <span class="chip">SQLite</span>
+                    <span class="chip">MySQL</span>
+                    <span class="chip">MongoDB</span>
+                </div>
+            </div>
+            <div class="skill-row reveal">
+                <span class="skill-cat">Cloud</span>
+                <div class="skill-chips">
+                    <span class="chip chip--accent">AWS</span>
+                    <span class="chip chip--accent">Microsoft Azure</span>
+                    <span class="chip chip--accent">Firebase</span>
+                </div>
+            </div>
+            <div class="skill-row reveal">
+                <span class="skill-cat">Concepts</span>
+                <div class="skill-chips">
+                    <span class="chip">Clean Architecture</span>
+                    <span class="chip">Repository Pattern</span>
+                    <span class="chip">SOLID Principles</span>
+                    <span class="chip">Agile / Scrum</span>
+                    <span class="chip">Microservices</span>
                 </div>
             </div>
         </div>
@@ -112,255 +389,106 @@
 
     <!-- EDUCATION -->
     <section id="education" class="section">
-        <div class="section-label">02 — Education</div>
-        <h2 class="section-title">Academic <em>background</em></h2>
+        <div class="section-header">
+            <span class="section-label">Education</span>
+            <h2 class="section-title">Academic <em>background</em></h2>
+        </div>
 
-        <div class="timeline">
-            <div class="timeline-item hidden">
-                <div class="tl-left">
-                    <span class="tl-date">2022 – 2024</span>
-                    <div class="tl-line"></div>
-                </div>
-                <div class="tl-card">
-                    <div class="tl-tag gpa-tag">CGPA 8.91</div>
-                    <h3>Master's Degree</h3>
-                    <h4>Computer Science / Software Engineering</h4>
-                    <p>Advanced graduate studies in software engineering, distributed systems, and cloud architecture.</p>
-                </div>
+        <div class="edu-grid">
+            <div class="edu-card reveal">
+                <div class="edu-year">2022 — 2024</div>
+                <div class="edu-badge gpa-badge">CGPA 8.91</div>
+                <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
+                <h4 class="edu-school">Lovely Professional University · Phagwara, Punjab</h4>
+                <p class="edu-desc">Specialization in Software Engineering, distributed systems, and cloud architecture.</p>
             </div>
-
-            <div class="timeline-item hidden">
-                <div class="tl-left">
-                    <span class="tl-date">2019 – 2022</span>
-                    <div class="tl-line"></div>
-                </div>
-                <div class="tl-card">
-                    <div class="tl-tag gpa-tag">CGPA 9.17</div>
-                    <h3>Bachelor of Science</h3>
-                    <h4>Physics Major</h4>
-                    <p>Strong foundation in analytical thinking, mathematics, and problem-solving.</p>
-                </div>
+            <div class="edu-card reveal">
+                <div class="edu-year">2019 — 2022</div>
+                <div class="edu-badge gpa-badge">CGPA 9.17</div>
+                <h3 class="edu-degree">Bachelor of Science (B.Sc.)</h3>
+                <h4 class="edu-school">Govt. Post Graduate College · Bilaspur, HP</h4>
+                <p class="edu-desc">Physics Major — strong analytical and mathematical foundation.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-        <div class="section-label">03 — Projects</div>
-        <h2 class="section-title">Things I've <em>built</em></h2>
-
-        <div class="projects-grid">
-            <div class="project-card project-card--large">
-                <div class="project-num">01</div>
-                <div class="project-body">
-                    <div class="project-stack">
-                        <span>React</span><span>Firebase</span>
-                    </div>
-                    <h3>Easy Clipboard</h3>
-                    <p>Copy text on one device, paste it on another — real-time cross-device clipboard syncing.</p>
-                </div>
-                <div class="project-links">
-                    <a href="https://www.github.com/vermaAbhay02/copy-paste-across-devices.git" class="proj-link">GitHub ↗</a>
-                    <a href="https://karcopy.netlify.app/" target="_blank" class="proj-link proj-live">Live ↗</a>
-                </div>
-                
-            </div>
-
-            <div class="project-card">
-                <div class="project-num">02</div>
-                <div class="project-body">
-                    <div class="project-stack">
-                        <span>ASP.NET Core MVC</span><span>SQL Server</span><span>Authentication</span>
-                    </div>
-                    <h3>MovieHub</h3>
-                    <p>Full-stack movie catalog platform with user authentication, reviews, and a rich SQL-backed data layer.</p>
-                </div>
-                <div class="project-links">
-                    <a href="#" class="proj-link">GitHub ↗</a>
-                </div>
-                
-            </div>
-
-            <div class="project-card">
-                <div class="project-num">03</div>
-                <div class="project-body">
-                    <div class="project-stack">
-                        <span>ASP.NET Web API</span><span>ReactJs</span><span>Redux</span>
-<span>SQL Server</span>
-                    </div>
-                    <h3>Dotshop</h3>
-                    <p>A full-stack e-commerce platform built with ASP.NET Core and React, featuring product browsing, basket management, and secure authentication.</p>
-                </div>
-                <div class="project-links">
-                    <a href="#" class="proj-link">GitHub ↗</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-        <div class="section-label">04 — Certifications</div>
-        <h2 class="section-title">Credentials & <em>badges</em></h2>
-
-        <div class="cert-grid">
-            <div class="cert-card">
-                <div class="cert-badge-wrap">
-                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/450x520_lower.f469f7e0f489543ad4619c662754dd7619077991.png" alt="AWS Cloud Practitioner" class="cert-badge">
-                </div>
-                <div class="cert-info">
-                    <span class="cert-issuer">Amazon Web Services</span>
-                    <h3>AWS Certified Cloud Practitioner</h3>
-                    <div class="cert-meta">
-                        <span class="cert-id">ID: 464985e098fd450bb7431b286cce5867</span>
-                        <span class="cert-valid">Valid through June 2028</span>
-                    </div>
-                    <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
-                </div>
-                <span class="cert-status">Active</span>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-badge-wrap">
-                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/1268_AWS_Cert_Template_badges_AI-Practitioner.3f7a936cef63769690a27beb1d27e2472c29adb2.png" alt="AWS AI Practitioner" class="cert-badge">
-                </div>
-                <div class="cert-info">
-                    <span class="cert-issuer">Amazon Web Services</span>
-                    <h3>AWS Certified AI Practitioner</h3>
-                    <div class="cert-meta">
-                        <span class="cert-id">ID: 5a58d2770ad1466a8da2cb30cc4b16f5</span>
-                        <span class="cert-valid">Valid through Nov 2028</span>
-                    </div>
-                    <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
-                </div>
-                <span class="cert-status">Active</span>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-badge-wrap">
-                    <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/1268_AWS_Cert_Template_badges_Machine-Learning-Engineer-Associate.43c42959403a73b47e9a85854b4030bd29fbedf9.png" alt="AWS ML Engineer" class="cert-badge">
-                </div>
-                <div class="cert-info">
-                    <span class="cert-issuer">Amazon Web Services</span>
-                    <h3>AWS Certified ML Engineer – Associate</h3>
-                    <div class="cert-meta">
-                        <span class="cert-id">ID: c26e4088b4454ee7b98e6bedd77abeff</span>
-                        <span class="cert-valid">Valid through Oct 2028</span>
-                    </div>
-                    <a href="https://aws.amazon.com/verification" target="_blank" class="cert-verify">Verify ↗</a>
-                </div>
-                <span class="cert-status">Active</span>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-badge-wrap">
-                    <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="Azure Data Fundamentals" class="cert-badge">
-                </div>
-                <div class="cert-info">
-                    <span class="cert-issuer">Microsoft</span>
-                    <h3>Azure Data Fundamentals</h3>
-                    <div class="cert-meta">
-                        <span class="cert-id">ID: 5VA6A3-D312C7</span>
-                        <span class="cert-valid">Earned on Nov 2025</span>
-                    </div>
-                    <a href="#" target="_blank" class="cert-verify">Verify ↗</a>
-                </div>
-                <span class="cert-status">Active</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-        <div class="section-label">05 — Skills</div>
-        <h2 class="section-title">My <em>toolkit</em></h2>
-
-        <div class="skills-container">
-            <div class="skill-group">
-                <span class="skill-group-label">Languages</span>
-                <div class="skill-chips">
-                    <div class="chip chip--cloud">C++</div>
-                    <div class="chip chip--cloud">C#</div>
-                    <div class="chip chip--cloud">Java</div>
-                    <div class="chip chip--cloud">Python</div>
-                    <div class="chip chip--cloud">Javascript</div>
-                </div>
-            </div>
-            <div class="skill-group">
-                <span class="skill-group-label">Backend</span>
-                <div class="skill-chips">
-                    <div class="chip chip--cloud">ASP.NET Core</div>
-                    <div class="chip chip--cloud">Entity Framework</div>
-                    <div class="chip chip--cloud">REST APIs</div>
-                    <div class="chip chip--cloud">Node.js</div>
-                </div>
-            </div>
-            <div class="skill-group">
-                <span class="skill-group-label">Data</span>
-                <div class="skill-chips">
-                    <div class="chip chip--cloud">SQL Server</div>
-                    <div class="chip chip--cloud">MYSQL</div>
-                    <div class="chip chip--cloud">MongoDb</div>
-
-
-                </div>
-            </div>
-            <div class="skill-group">
-                <span class="skill-group-label">Cloud</span>
-                <div class="skill-chips">
-                    <div class="chip chip--cloud">AWS</div>
-                    <div class="chip chip--cloud">Azure</div>
-                </div>
-            </div>
-            <div class="skill-group">
-                <span class="skill-group-label">Frontend</span>
-                <div class="skill-chips">
-                    <div class="chip chip--cloud">React</div>
-                    <div class="chip chip--cloud">Angular</div>
-                    <div class="chip chip--cloud">Typescript</div>
-                    <div class="chip chip--cloud">Redux</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-left">
                 <span class="logo">AV<span class="logo-dot">.</span></span>
                 <p>Building things that scale.</p>
             </div>
-            <div class="footer-right">
+            <div class="footer-links">
                 <a href="https://linkedin.com/in/abhayverma1" target="_blank">LinkedIn</a>
                 <a href="https://github.com/vermaAbhay02" target="_blank">GitHub</a>
                 <a href="mailto:abhayverma.dev@gmail.com">Email</a>
             </div>
         </div>
-        <div class="footer-copy">© 2026 Abhay Verma — All rights reserved</div>
+        <div class="footer-copy">© 2026 Abhay Verma</div>
     </footer>
 
     <script>
-        // Cursor glow
-        const glow = document.getElementById('cursorGlow');
-        document.addEventListener('mousemove', e => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
+        // Progress bar
+        const bar = document.getElementById('progressBar');
+        window.addEventListener('scroll', () => {
+            const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+            bar.style.width = pct + '%';
         });
 
-        // Scroll animation — ONLY the IntersectionObserver logic (user's original JS preserved)
-        const observer = new IntersectionObserver(entries => {
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Mobile menu
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        menuBtn.addEventListener('click', () => {
+            const open = mobileNav.classList.toggle('open');
+            menuBtn.classList.toggle('open', open);
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+                menuBtn.classList.remove('open');
+            });
+        });
+
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+        // Stagger project cards
+        document.querySelectorAll('.proj-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 80}ms`;
+        });
 
-        // Navbar scroll state
-        window.addEventListener('scroll', () => {
-            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        // Stagger cert cards
+        document.querySelectorAll('.cert-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 70}ms`;
+        });
+
+        // Stagger skill rows
+        document.querySelectorAll('.skill-row').forEach((row, i) => {
+            row.style.transitionDelay = `${i * 60}ms`;
+        });
+
+        // Chip hover ripple
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('mousemove', e => {
+                const r = chip.getBoundingClientRect();
+                chip.style.setProperty('--x', e.clientX - r.left + 'px');
+                chip.style.setProperty('--y', e.clientY - r.top + 'px');
+            });
         });
     </script>
 </body>
